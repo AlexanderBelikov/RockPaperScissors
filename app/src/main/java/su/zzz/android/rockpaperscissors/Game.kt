@@ -1,7 +1,5 @@
 package su.zzz.android.rockpaperscissors
 
-import kotlin.Comparator
-
 enum class Option(val dId:Int) {
     ROCK(R.drawable.o_rock){
         override fun beat(other: Option): Boolean = other==SCISSORS

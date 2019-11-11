@@ -7,26 +7,6 @@ import android.view.View
 import android.widget.ImageView
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
-    override fun onClick(v: View?) {
-        val vId = v?.id
-        var userChoose = when (vId) {
-            R.id.iv_rock -> Option.ROCK
-            R.id.iv_scissors -> Option.SCISSORS
-            R.id.iv_paper -> Option.PAPER
-            else -> throw Exception("Unknown Option")
-        }
-        var gameChoice = getGameChoice()
-        ivGameChoose.setImageDrawable(resources.getDrawable(gameChoice.dId))
-
-        if (userChoose!=gameChoice)
-            if (userChoose.beat(gameChoice))
-                ivState.setImageDrawable(resources.getDrawable(R.drawable.r_win))
-            else
-                ivState.setImageDrawable(resources.getDrawable(R.drawable.r_lose))
-        else
-            ivState.setImageDrawable(resources.getDrawable(R.drawable.a_choose))
-    }
-
     private val TAG : String = MainActivity::class.java.simpleName
     private lateinit var ivState : ImageView
     private lateinit var ivGameChoose : ImageView
@@ -49,8 +29,23 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         ivPaper.setOnClickListener(this)
     }
 
+    override fun onClick(v: View?) {
+        val vId = v?.id
+        var userChoose = when (vId) {
+            R.id.iv_rock -> Option.ROCK
+            R.id.iv_scissors -> Option.SCISSORS
+            R.id.iv_paper -> Option.PAPER
+            else -> throw Exception("Unknown Option")
+        }
+        var gameChoice = getGameChoice()
+        ivGameChoose.setImageDrawable(resources.getDrawable(gameChoice.dId))
 
-    override fun onStart() {
-        super.onStart()
+        if (userChoose!=gameChoice)
+            if (userChoose.beat(gameChoice))
+                ivState.setImageDrawable(resources.getDrawable(R.drawable.r_win))
+            else
+                ivState.setImageDrawable(resources.getDrawable(R.drawable.r_lose))
+        else
+            ivState.setImageDrawable(resources.getDrawable(R.drawable.a_choose))
     }
 }
