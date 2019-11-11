@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/iv_game_choose"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/iv_state"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.3"
+        android:rotation="180"
+        app:srcCompat="@drawable/o_unknown" />
+
+    <ImageView
+        android:id="@+id/iv_state"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.3"
+        app:srcCompat="@drawable/a_choose" />
+
+    <ImageView
+        android:id="@+id/iv_rock"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/iv_scissors"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_state"
+        app:layout_constraintWidth_percent="0.3"
+        app:srcCompat="@drawable/o_rock" />
+
+    <ImageView
+        android:id="@+id/iv_scissors"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/iv_paper"
+        app:layout_constraintStart_toEndOf="@+id/iv_rock"
+        app:layout_constraintTop_toBottomOf="@+id/iv_state"
+        app:layout_constraintWidth_percent="0.3"
+        app:srcCompat="@drawable/o_scissors" />
+
+    <ImageView
+        android:id="@+id/iv_paper"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_scissors"
+        app:layout_constraintTop_toBottomOf="@id/iv_state"
+        app:layout_constraintWidth_percent="0.3"
+        app:srcCompat="@drawable/o_paper" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
